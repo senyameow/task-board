@@ -12,6 +12,11 @@ export default function Home() {
         <div className=" bg-gradient-to-r text-3xl md:text-6xl from-purple-600 to-pink-600 p-2 px-4 rounded-xl text-white">
           work flow
         </div>
+        <div className="flex items-center gap-1 text-neutral-400 mt-6 flex-col text-center text-2xl ">
+          <p>-- Envision Your ideal future --</p>
+          <p>-- Set clear goals --</p>
+          <p>-- Create a system of everyday actions --</p>
+        </div>
       </div>
     </div>
   )
