@@ -1,6 +1,6 @@
 const Layout = ({ children }: React.PropsWithChildren) => {
     return (
-        <div className="h-full bg-slate-50 flex flex-col">
+        <div className="h-full bg-slate-100 flex flex-col">
 
             {/* <Navbar /> */}
 
