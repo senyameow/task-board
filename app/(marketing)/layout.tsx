@@ -1,8 +1,10 @@
+import { Navbar } from "./_components/Navbar";
+
 const Layout = ({ children }: React.PropsWithChildren) => {
     return (
         <div className="h-full bg-slate-100 flex flex-col">
 
-            {/* <Navbar /> */}
+            <Navbar />
 
             <main className="pt-40 pb-20 flex-1">
                 {children}
