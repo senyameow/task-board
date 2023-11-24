@@ -1,3 +1,4 @@
+import { Footer } from "./_components/Footer";
 import { Navbar } from "./_components/Navbar";
 
 const Layout = ({ children }: React.PropsWithChildren) => {
@@ -10,7 +11,7 @@ const Layout = ({ children }: React.PropsWithChildren) => {
                 {children}
             </main>
 
-            {/* <Footer /> */}
+            <Footer />
         </div>
     )
 }
