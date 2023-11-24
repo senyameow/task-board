@@ -3,6 +3,7 @@ import Font from 'next/font/local'
 
 import { cn } from "@/lib/utils";
 import { Poppins } from "next/font/google";
+import Logo from "@/components/Logo";
 const headingFont = Font({
   src: '../../public/fonts/font.woff2'
 })
@@ -43,7 +44,6 @@ export default function Home() {
           <p className={headingFont.className}>-- Envision Your ideal <span className="text-5xl text-rose-500 pl-3">future</span> --</p>
           <p className={headingFont.className}>-- Set clear <span className="text-5xl text-pink-500 pl-3">goals</span> --</p>
           <p className={headingFont.className}>-- Create a system of everyday <span className="text-5xl text-purple-500 pl-3">actions</span> --</p>
-
         </div>
       </div>
 
