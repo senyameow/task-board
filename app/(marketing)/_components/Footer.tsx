@@ -9,8 +9,11 @@ export const Footer = () => {
             <div className='px-4 mx-auto flex items-center justify-between w-full'>
                 <Logo />
                 <div className='flex items-center gap-2'>
-                    <Button variant={'ghost'}>
+                    <Button variant={'ghost'} >
                         Privacy and Policy
+                    </Button>
+                    <Button variant={'ghost'} >
+                        Terms and conditions
                     </Button>
                 </div>
             </div>
