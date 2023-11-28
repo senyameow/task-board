@@ -1,4 +1,4 @@
-import Navbar from "./organization/[organizationId]/components/Navbar";
+import Navbar from "./organization/[organizationId]/_components/Navbar";
 
 const DashBoardLayout = ({ children }: React.PropsWithChildren) => {
     return (

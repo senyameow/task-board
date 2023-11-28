@@ -1,5 +1,5 @@
 import { auth, OrganizationSwitcher } from '@clerk/nextjs'
-import Navbar from './components/Navbar';
+import Navbar from './_components/Navbar';
 
 
 const OrganizationPage = () => {
