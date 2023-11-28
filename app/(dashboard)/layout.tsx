@@ -4,7 +4,7 @@ const DashBoardLayout = ({ children }: React.PropsWithChildren) => {
     return (
         <div className="h-full">
             <Navbar />
-            <main className="pt-16">
+            <main className="">
                 {children}
             </main>
         </div>
