@@ -1,7 +1,7 @@
 'use client'
 import { useOrganizationList } from '@clerk/nextjs'
 import { useParams } from 'next/navigation'
-import React, { useEffect } from 'react'
+import { useEffect } from 'react'
 
 export const Control = () => {
 
@@ -20,3 +20,4 @@ export const Control = () => {
 
     return null
 }
+
