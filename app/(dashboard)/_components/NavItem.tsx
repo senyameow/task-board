@@ -2,8 +2,10 @@ import { AccordionContent, AccordionItem, AccordionTrigger } from '@/components/
 import React from 'react'
 import Image from 'next/image'
 import { cn } from '@/lib/utils';
-import { Layout } from 'lucide-react';
+import { Activity, CreditCard, Layout, Settings } from 'lucide-react';
 import Link from 'next/link'
+import { usePathname, useRouter } from 'next/navigation'
+import { Button } from '@/components/ui/button';
 
 export type Organization = {
     id: string;
@@ -22,6 +24,13 @@ interface NavItemProps {
 
 const NavItem = ({ isActive, isExpanded, onExpand, organization }: NavItemProps) => {
 
+    const pathname = usePathname()
+    const router = useRouter()
+
+    const onRedirect = (href: string) => {
+        router.push(href)
+    }
+
     const routes = [
         {
             label: 'Boards',
@@ -29,33 +38,38 @@ const NavItem = ({ isActive, isExpanded, onExpand, organization }: NavItemProps)
             href: `/organization/${organization.id}`
         },
         {
-            label: 'Boards',
-            icon: <Layout className='h-4 w-4 mr-2' />,
-            href: `/organization/${organization.id}`
+            label: 'Activity',
+            icon: <Activity className='h-4 w-4 mr-2' />,
+            href: `/organization/${organization.id}/activity`
         },
         {
-            label: 'Boards',
-            icon: <Layout className='h-4 w-4 mr-2' />,
-            href: `/organization/${organization.id}`
+            label: 'Settings',
+            icon: <Settings className='h-4 w-4 mr-2' />,
+            href: `/organization/${organization.id}/settings`
+        },
+        {
+            label: 'Billing',
+            icon: <CreditCard className='h-4 w-4 mr-2' />,
+            href: `/organization/${organization.id}/billing`
         },
     ]
 
     return (
         <AccordionItem value={organization.id} className='border-none'>
-            <AccordionTrigger className={cn(`hover:bg-gray-200 px-4 p-2 rounded-lg border-none`, isActive && !isExpanded && 'bg-sky-200/80 hover:bg-sky-200/60')}>
+            <AccordionTrigger onClick={() => onExpand(organization.id)} className={cn(`hover:bg-gray-200 px-4 p-2 rounded-lg border-none`, (isActive && !isExpanded) && 'bg-sky-200/80 hover:bg-sky-200/60')}>
                 <div className='flex items-center gap-2 '>
                     <Image src={organization.imageUrl} alt='org-logo' width={30} height={30} className='rounded-lg aspect-square' />
                     <span className=''>{organization.name}</span>
                 </div>
             </AccordionTrigger>
-            <AccordionContent>
+            <AccordionContent className='text-neutal-700'>
                 {routes.map(r => (
-                    <Link href={r.href} className='p-2' >
-                        <div className={cn(`flex items-center gap-2 pl-6`,)}>
+                    <Button className={cn(`w-full font-normal pl-10 mb-1 my-1 justify-start`, pathname === r.href && 'bg-sky-200/80 hover:bg-sky-200/60')} variant={'ghost'} size={'sm'} key={r.href} onClick={() => onRedirect(r.href)} >
+                        <div className={cn(`flex items-center gap-2 `,)}>
                             {r.icon}
                             {r.label}
                         </div>
-                    </Link>
+                    </Button>
                 ))}
             </AccordionContent>
         </AccordionItem>
