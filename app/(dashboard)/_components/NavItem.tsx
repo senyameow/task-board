@@ -6,6 +6,7 @@ import { Activity, CreditCard, Layout, Settings } from 'lucide-react';
 import Link from 'next/link'
 import { usePathname, useRouter } from 'next/navigation'
 import { Button } from '@/components/ui/button';
+import { useMobileSidebar } from '@/hooks/useMobileSidebar';
 
 export type Organization = {
     id: string;
@@ -27,8 +28,11 @@ const NavItem = ({ isActive, isExpanded, onExpand, organization }: NavItemProps)
     const pathname = usePathname()
     const router = useRouter()
 
+    const { onClose } = useMobileSidebar()
+
     const onRedirect = (href: string) => {
         router.push(href)
+        onClose()
     }
 
     const routes = [
