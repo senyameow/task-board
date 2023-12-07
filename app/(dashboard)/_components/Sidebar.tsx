@@ -45,7 +45,10 @@ const Sidebar = ({ storageKey = 'sidebar-state' }: SidebarProps) => {
 
     if (!isLoaded || !isLoadedOrg || userMemberships.isLoading) return (
         <>
-            <Skeleton className='' />
+            <div className='flex items-center w-full justify-between gap-2'>
+                <Skeleton className='w-[100px] h-[16px] bg-gray-300' />
+                <Skeleton className='w-[30px] h-[30px] rounded-lg bg-gray-300' />
+            </div>
         </>
     )
 
