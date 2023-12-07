@@ -85,7 +85,7 @@ NavItem.Skeleton = function NavItemSkeleton() {
     return (
         <div className='flex items-center gap-2'>
             <Skeleton className='rounded-lg aspect-square w-[30px] h-[30px]' />
-            <Skeleton className='h-10 w-full' />
+            <Skeleton className='h-6 w-full' />
         </div>
     )
 }
