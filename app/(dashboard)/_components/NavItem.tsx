@@ -7,6 +7,7 @@ import Link from 'next/link'
 import { usePathname, useRouter } from 'next/navigation'
 import { Button } from '@/components/ui/button';
 import { useMobileSidebar } from '@/hooks/useMobileSidebar';
+import { Skeleton } from '@/components/ui/skeleton';
 
 export type Organization = {
     id: string;
@@ -77,6 +78,15 @@ const NavItem = ({ isActive, isExpanded, onExpand, organization }: NavItemProps)
                 ))}
             </AccordionContent>
         </AccordionItem>
+    )
+}
+
+NavItem.Skeleton = function NavItemSkeleton() {
+    return (
+        <div className='flex items-center gap-2'>
+            <Skeleton className='rounded-lg aspect-square w-[30px] h-[30px]' />
+            <Skeleton className='h-10 w-full' />
+        </div>
     )
 }
 
