@@ -21,11 +21,11 @@ export default authMiddleware({
         }
 
         // если юзер переходит по ссылке, но он не залогинен, то когда он залогинется, его кинет на тот юрл, куда он хотел
-        if (!auth.userId && !auth.isPublicRoute) {
-            return redirectToSignIn({ returnBackUrl: req.url })
-        }
+        // if (!auth.userId && !auth.isPublicRoute) {
+        //     return redirectToSignIn({ returnBackUrl: req.url })
+        // }
 
-        if (auth.userId && !auth.orgId && req.nextUrl.pathname !== 'select-org') {
+        if (auth.userId && !auth.orgId && !req.nextUrl.pathname.includes('select-org')) {
             const orgSelectionIfUserDontHaveOneButLoggenIn = new URL(`select-org`, req.url)
             return NextResponse.redirect(orgSelectionIfUserDontHaveOneButLoggenIn)
         }
