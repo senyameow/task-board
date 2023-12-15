@@ -1,5 +1,6 @@
 'use client'
-import React from 'react'
+import React, { forwardRef } from 'react'
+import { useFormStatus } from 'react-dom';
 
 interface FormInputProps {
     id: string;
@@ -15,8 +16,21 @@ interface FormInputProps {
     onBlur?: () => void;
 }
 
-export const FormInput = () => {
-    return (
-        <div>FormInput</div>
-    )
-}
+export const FormInput = forwardRef<HTMLInputElement, FormInputProps>(({
+    id,
+    label,
+    type,
+    placeholder,
+    disabled,
+    requiered,
+    errors,
+    className,
+    defaulVal,
+    onBlur
+}, ref) => {
+
+    const { pending, data, method, action } = useFormStatus()
+
+})
+
+FormInput.displayName = 'FormInput'
