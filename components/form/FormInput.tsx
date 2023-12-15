@@ -8,13 +8,15 @@ interface FormInputProps {
     placeholder?: string;
     requiered?: boolean;
     disabled?: boolean;
-    errors?: Record<string, string[]> | undefined
+    errors?: Record<string, string[] | undefined>
+
+    className?: string;
+    defaultVal?: string;
+    onBlur?: () => void;
 }
 
-const FormInput = () => {
+export const FormInput = () => {
     return (
         <div>FormInput</div>
     )
 }
-
-export default FormInput
